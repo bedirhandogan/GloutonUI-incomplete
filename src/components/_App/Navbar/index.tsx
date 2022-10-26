@@ -2,7 +2,7 @@ import "./styles.css";
 
 function Navbar() {
   return (
-    <div className="w-min h-12 relative flex items-center justify-between bg-primary container__limit cursor-pointer">
+    <div className="w-min h-12 relative flex items-center justify-between bg-primary container-limit cursor-pointer">
       <div className="device-button tooltip">
         <div className="tip">
             Phone

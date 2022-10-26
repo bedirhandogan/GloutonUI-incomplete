@@ -12,7 +12,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({title, sidebarType, width, children}) => {
     return (
-        <div className={`sidebar container__limit ${width}`}>
+        <div className={`sidebar container-limit ${width}`}>
             <div className={'up-area'}>
                 { sidebarType === 'components' && <div className='relative tooltip flex items-center'>
                     <div className='tip'> Home </div>

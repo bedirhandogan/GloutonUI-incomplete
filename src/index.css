@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .container__limit {
+  .container-limit {
     @apply rounded-xl border border-secondary outline outline-4 outline-primary;
   }
   .bg-circle-effect {

@@ -4,10 +4,11 @@ import Sidebar from "components/_App/Sidebar";
 import "./styles.css";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
 import { CopyBlock, dracula } from "react-code-blocks";
+import ContextMenu from "components/ContextMenu";
 
 export default function App() {
   const screen = window.screen.width;
-
+  
   return (
     <div
       className={`app bg-circle-effect [&>#warning-information]:flex ${
@@ -24,7 +25,6 @@ export default function App() {
         </h2>
       </div>
       <Sidebar title="Components" width="w-64" sidebarType="components">
-
       </Sidebar>
       <div className="w-2/6 flex flex-col items-center">
         <Navbar />
@@ -40,6 +40,7 @@ export default function App() {
           />
         </div> */}
       </Sidebar>
+      <ContextMenu />
     </div>
   );
 }

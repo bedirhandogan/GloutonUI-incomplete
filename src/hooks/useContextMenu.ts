@@ -11,8 +11,8 @@ const useContextMenu = () => {
 
     const contextMenuHandler = useCallback((event: MouseEvent) => {
         event.preventDefault();
-        setY(`${event.pageY + 200 > height ? `${event.pageY - 260}px`: `${event.pageY}px`}`);
-        setX(`${event.pageX + 200 > width ? `${event.pageX - 220}px`: `${event.pageX}px`}`);
+        setY(`${event.pageY + 200 > height ? event.pageY - 260 : event.pageY}px`);
+        setX(`${event.pageX + 200 > width ? event.pageX - 220 : event.pageX}px`);
         setShowContextMenu(true);
     }, [width, height]);
 

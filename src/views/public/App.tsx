@@ -1,10 +1,11 @@
 import Main from "components/_App/Main";
 import Navbar from "components/_App/Navbar";
 import Sidebar from "components/_App/Sidebar";
-import "./styles.css";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
-// import { CopyBlock, dracula } from "react-code-blocks";
+import LangSelect from "components/_App/LangSelect";
 import ContextMenu from "components/ContextMenu";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
+import "./styles.css";
+import CodeBlock from "components/_App/CodeBlock";
 
 export default function App() {
   const screen: number = window.screen.width;
@@ -31,14 +32,8 @@ export default function App() {
         <Main />
       </div>
       <Sidebar title="Code" width="w-96" sidebarType="code">
-        {/* <div className="copy-block">
-          <CopyBlock
-            text={code}
-            language={"css"}
-            theme={dracula}
-            codeBlock
-          />
-        </div> */}
+        <LangSelect />
+        <CodeBlock text={`<!--- Code HTML --->`} language="html" />
       </Sidebar>
       <ContextMenu />
     </div>

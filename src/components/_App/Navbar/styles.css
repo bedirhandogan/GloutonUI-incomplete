@@ -2,7 +2,7 @@
 
 @layer components {
     .device-button {
-        @apply h-full border-r border-secondary flex items-center p-3;
+        @apply h-full border-r-2 border-secondary flex items-center p-3;
     }
     .device-button > svg > path {
         @apply duration-100 ease-linear;

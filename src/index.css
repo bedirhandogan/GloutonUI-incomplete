@@ -4,7 +4,7 @@
 
 @layer components {
   .container-limit {
-    @apply rounded-xl border border-secondary outline outline-4 outline-primary;
+    @apply rounded-xl border-2 border-secondary outline outline-4 outline-primary;
   }
   .bg-circle-effect {
     background: radial-gradient(circle, #1e1e1e 10%, transparent 11%);
@@ -12,17 +12,17 @@
     background-color: #121316;
   }
   .tooltip {
-    @apply h-full flex justify-center;
+    @apply h-min flex justify-center;
   }
   .tooltip > div.tip {
     @apply hidden;
   }
   .tooltip:hover > div.tip {
-    @apply flex items-center text-third border border-secondary bg-primary absolute px-2 py-1 rounded-md text-sm;
-    bottom: -35px;
+    @apply flex items-center text-third border -bottom-9 border-secondary bg-primary z-10 absolute px-2 py-1 rounded-md text-sm;
   }
 }
 
-body, html {
+body,
+html {
   overflow: hidden;
 }

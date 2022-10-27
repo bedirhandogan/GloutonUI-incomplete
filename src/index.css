@@ -4,7 +4,7 @@
 
 @layer components {
   .container-limit {
-    @apply rounded-xl border-2 border-secondary outline outline-4 outline-primary;
+    @apply rounded-xl border border-secondary outline outline-4 outline-primary;
   }
   .bg-circle-effect {
     background: radial-gradient(circle, #1e1e1e 10%, transparent 11%);

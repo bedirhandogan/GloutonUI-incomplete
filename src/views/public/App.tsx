@@ -3,11 +3,11 @@ import Navbar from "components/_App/Navbar";
 import Sidebar from "components/_App/Sidebar";
 import "./styles.css";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
-import { CopyBlock, dracula } from "react-code-blocks";
+// import { CopyBlock, dracula } from "react-code-blocks";
 import ContextMenu from "components/ContextMenu";
 
 export default function App() {
-  const screen = window.screen.width;
+  const screen: number = window.screen.width;
   
   return (
     <div

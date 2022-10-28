@@ -1,5 +1,5 @@
 import { CodeBlock as ReactCodeBlock, dracula } from "react-code-blocks";
-import { IconClipboard, IconClipboardCheck } from "@tabler/icons";
+import { IconClipboardList, IconClipboardCheck } from "@tabler/icons";
 import { useLanguageSelect } from "hooks/useLanguageSelect";
 import "./styles.css";
 import { useState } from "react";
@@ -21,14 +21,14 @@ export default function CodeBlock({ text, language }: CodeBlockProps) {
 
   const copyHandler = (text: string) => {
     navigator.clipboard.writeText(text);
-    setCopy({ state: true, text: 'Copied'});
+    setCopy({ state: true, text: 'Copied!'});
     setTimeout(() => setCopy({ state: false, text: 'Copy'}), 1000);
   }
 
   return (
     <div className={`code-block relative ${languageHandler()}`}>
       <div className="tooltip absolute top-3 right-3">
-        <IconClipboard
+        <IconClipboardList
           stroke={1.2}
           className={`stroke-fourth hover:stroke-third duration-100 w-6 ${
             copy.state ? "hidden" : "block"

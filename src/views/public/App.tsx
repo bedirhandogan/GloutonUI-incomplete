@@ -3,13 +3,14 @@ import Navbar from "components/_App/Navbar";
 import Sidebar from "components/_App/Sidebar";
 import LangSelect from "components/_App/LangSelect";
 import ContextMenu from "components/ContextMenu";
+import SelectLangProvider from "services/context/languageSelectProvider";
+import CodeBlock from "components/_App/CodeBlock";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
 import "./styles.css";
-import CodeBlock from "components/_App/CodeBlock";
 
 export default function App() {
   const screen: number = window.screen.width;
-  
+
   return (
     <div
       className={`app bg-circle-effect [&>#warning-information]:flex ${
@@ -32,8 +33,12 @@ export default function App() {
         <Main />
       </div>
       <Sidebar title="Code" width="w-96" sidebarType="code">
-        <LangSelect />
-        <CodeBlock text={`<!--- Code HTML --->`} language="html" />
+        <SelectLangProvider>
+          <LangSelect />
+          <CodeBlock text={`{/* Code JSX */}`} language="jsx" />
+          <CodeBlock text={`<!--- Code HTML --->`} language="html" />
+          <CodeBlock text={`/* Code CSS */`} language="css" />
+        </SelectLangProvider>
       </Sidebar>
       <ContextMenu />
     </div>

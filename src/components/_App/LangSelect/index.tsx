@@ -1,9 +1,9 @@
 import { IconBrandHtml5, IconBrandReact, IconBrandCss3 } from '@tabler/icons';
-import { useLanguageSelect } from 'hooks/useLanguageSelect';
+import { useLanguageSelector } from 'hooks/useLanguageSelector';
 import "./styles.css";
 
 export default function LangSelect() {
-    const { languages, setLanguages } = useLanguageSelect();
+    const { languages, setLanguages } = useLanguageSelector();
     return (
         <div className="lang-select">
             <div className="tooltip flex items-center" onClick={() => setLanguages({html: false, jsx: true, css: false})}>

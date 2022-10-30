@@ -13,7 +13,7 @@ interface ContextInterface {
 
 export const Context = createContext<ContextInterface>({ languages: { css: false, jsx: false, html: false }, setLanguages: () => {} });
 
-export default function SelectLangProvider({ children } : { children: React.ReactNode }) {
+export default function LanguageSelectorProvider({ children } : { children: React.ReactNode }) {
   const [languages, setLanguages] = useState({css: false, jsx: true, html: false});
 
   const data: ContextInterface = {

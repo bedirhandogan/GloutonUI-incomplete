@@ -3,14 +3,16 @@ import Navbar from "components/_App/Navbar";
 import Sidebar from "components/_App/Sidebar";
 import LangSelect from "components/_App/LangSelect";
 import ContextMenu from "components/ContextMenu";
-import SelectLangProvider from "services/context/languageSelectProvider";
+import Preview from "components/_App/Preview";
+import LanguageSelectorProvider from "services/context/languageSelector";
+import DeviceSizeSelectorProvider from "services/context/deviceSizeSelector";
 import CodeBlock from "components/_App/CodeBlock";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
+import { ExclamationTriangleIcon as ExclamationTriangleOutline } from "@heroicons/react/24/outline";
 import "./styles.css";
 
 export default function App() {
   const screen: number = window.screen.width;
-
   return (
     <div
       className={`app bg-circle-effect [&>#warning-information]:flex ${
@@ -27,18 +29,34 @@ export default function App() {
         </h2>
       </div>
       <Sidebar title="Components" width="w-64" sidebarType="components">
+
       </Sidebar>
-      <div className="w-2/6 flex flex-col items-center">
-        <Navbar />
-        <Main />
-      </div>
-      <Sidebar title="Code" width="w-96" sidebarType="code">
-        <SelectLangProvider>
+      <Main>
+        <DeviceSizeSelectorProvider>
+          <Navbar />
+          <Preview>
+            <div className="w-64 bg-white rounded-lg px-5 py-3">
+              <div className="flex gap-3 items-start">
+                <ExclamationTriangleOutline className="w-6 h-6 stroke-red-700" />
+                <h3 className="font-medium text-base">
+                  This is a warning message
+                </h3>
+              </div>
+              <p className="pl-9 text-sm font-normal">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                mollitia neque suscipit asperiores perferendis dolorem.
+              </p>
+            </div>
+          </Preview>
+        </DeviceSizeSelectorProvider>
+      </Main>
+      <Sidebar title="Source Code" width="w-96" sidebarType="code">
+        <LanguageSelectorProvider>
           <LangSelect />
           <CodeBlock text={`{/* Code JSX */}`} language="jsx" />
           <CodeBlock text={`<!--- Code HTML --->`} language="html" />
           <CodeBlock text={`/* Code CSS */`} language="css" />
-        </SelectLangProvider>
+        </LanguageSelectorProvider>
       </Sidebar>
       <ContextMenu />
     </div>

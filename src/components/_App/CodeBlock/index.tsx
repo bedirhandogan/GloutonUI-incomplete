@@ -1,6 +1,6 @@
 import { CodeBlock as ReactCodeBlock, dracula } from "react-code-blocks";
 import { IconClipboardList, IconClipboardCheck } from "@tabler/icons";
-import { useLanguageSelect } from "hooks/useLanguageSelect";
+import { useLanguageSelector } from "hooks/useLanguageSelector";
 import "./styles.css";
 import { useState } from "react";
 
@@ -11,7 +11,7 @@ interface CodeBlockProps {
 
 export default function CodeBlock({ text, language }: CodeBlockProps) {
   const [copy, setCopy] = useState<{state: boolean, text: string}>({ state: false, text: 'Copy'});
-  const { languages } = useLanguageSelect();
+  const { languages } = useLanguageSelector();
   const languageHandler = (): string =>
     `${ 
       language === "jsx" ? `${!languages.jsx && "hidden"}` : 

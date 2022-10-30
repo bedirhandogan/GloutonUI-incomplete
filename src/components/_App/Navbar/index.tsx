@@ -1,9 +1,11 @@
+import { useDeviceSizeSelector } from "hooks/useDeviceSizeSelector";
 import "./styles.css";
 
 function Navbar() {
+  const { setDeviceSize } = useDeviceSizeSelector();
   return (
     <div className="w-min h-12 relative flex items-center justify-between bg-primary container-limit cursor-pointer">
-      <div className="device-button tooltip">
+      <div className="device-button tooltip" onClick={() => setDeviceSize('[&>div]:w-64')}>
         <div className="tip">
             Phone
         </div>
@@ -21,7 +23,7 @@ function Navbar() {
           />
         </svg>
       </div>
-      <div className="device-button tooltip">
+      <div className="device-button tooltip" onClick={() => setDeviceSize('[&>div]:w-80')}>
         <div className="tip">
             Tablet
         </div>
@@ -39,7 +41,7 @@ function Navbar() {
           />
         </svg>
       </div>
-      <div className="device-button border-none tooltip">
+      <div className="device-button border-none tooltip" onClick={() => setDeviceSize('[&>div]:w-96')}>
         <div className="tip">
             Desktop
         </div>

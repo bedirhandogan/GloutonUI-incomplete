@@ -1,4 +1,4 @@
-import useContextMenu from "hooks/useContextMenu";
+import useContextMenu from "hooks/utilities/useContextMenu";
 
 export default function ContextMenu() {
     const { x, y, showContextMenu } = useContextMenu();

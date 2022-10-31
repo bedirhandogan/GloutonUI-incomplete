@@ -4,19 +4,20 @@ import Sidebar from "components/_App/Sidebar";
 import LangSelect from "components/_App/LangSelect";
 import ContextMenu from "components/ContextMenu";
 import Preview from "components/_App/Preview";
+import CodeBlock from "components/_App/CodeBlock";
 import LanguageSelectorProvider from "services/context/languageSelector";
 import DeviceSizeSelectorProvider from "services/context/deviceSizeSelector";
-import CodeBlock from "components/_App/CodeBlock";
+import { useScreenWidth } from "hooks";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
-import { ExclamationTriangleIcon as ExclamationTriangleOutline } from "@heroicons/react/24/outline";
+import { XCircleIcon } from "@heroicons/react/24/outline";
 import "./styles.css";
 
 export default function App() {
-  const screen: number = window.screen.width;
+  const { deviceWidth } = useScreenWidth();
   return (
     <div
       className={`app bg-circle-effect [&>#warning-information]:flex ${
-        screen >= 1024
+        deviceWidth >= 1280
           ? "[&>#warning-information]:hidden"
           : "[&>#warning-information]:block"
       }`}
@@ -28,16 +29,15 @@ export default function App() {
           from the computer.
         </h2>
       </div>
-      <Sidebar title="Components" width="w-64" sidebarType="components">
-
+      <Sidebar title="Elements" width="w-64" sidebarType="components">
       </Sidebar>
       <Main>
         <DeviceSizeSelectorProvider>
           <Navbar />
           <Preview>
-            <div className="w-64 bg-white rounded-lg px-5 py-3">
+            <div className="bg-red-100 rounded-lg p-4">
               <div className="flex gap-3 items-start">
-                <ExclamationTriangleOutline className="w-6 h-6 stroke-red-700" />
+                <XCircleIcon className="w-6 h-6 stroke-red-500" />
                 <h3 className="font-medium text-base">
                   This is a warning message
                 </h3>

@@ -1,6 +1,6 @@
 import { CodeBlock as ReactCodeBlock, dracula } from "react-code-blocks";
 import { IconClipboardList, IconClipboardCheck } from "@tabler/icons";
-import { useLanguageSelector } from "hooks/useLanguageSelector";
+import { useLanguageSelector } from "hooks";
 import "./styles.css";
 import { useState } from "react";
 

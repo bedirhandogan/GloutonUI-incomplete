@@ -1,4 +1,4 @@
-import { useDeviceSizeSelector } from "hooks/useDeviceSizeSelector";
+import { useDeviceSizeSelector } from "hooks";
 import "./styles.css";
 
 function Navbar() {

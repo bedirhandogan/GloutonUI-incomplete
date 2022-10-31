@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-const useContextMenu = () => {
+export default function useContextMenu() {
     const [x, setX] = useState<String>('0');
     const [y, setY] = useState<String>('0');
     const [showContextMenu, setShowContextMenu] = useState<Boolean>(false);
@@ -17,10 +17,8 @@ const useContextMenu = () => {
     }, [width, height]);
 
     useEffect(() => {
-        //mount
         document.addEventListener('click', clickHandler);
         document.addEventListener('contextmenu', contextMenuHandler);
-        //unmount
         return () => {
             document.removeEventListener('click', clickHandler);
             document.removeEventListener('contextmenu', contextMenuHandler);
@@ -29,5 +27,3 @@ const useContextMenu = () => {
 
     return { x, y, showContextMenu };
 }
-
-export default useContextMenu;

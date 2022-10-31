@@ -1,4 +1,4 @@
-import { useDeviceSizeSelector } from "hooks/useDeviceSizeSelector";
+import { useDeviceSizeSelector } from "hooks";
 import React from "react";
 
 function Preview({ children }: { children: React.ReactNode }) {

@@ -1,4 +1,4 @@
-import { CodeBlock as ReactCodeBlock, dracula } from "react-code-blocks";
+import { CodeBlock as ReactCodeBlock, arta } from "react-code-blocks";
 import { IconClipboardList, IconClipboardCheck } from "@tabler/icons";
 import { useLanguageSelector } from "hooks";
 import "./styles.css";
@@ -43,7 +43,7 @@ export default function CodeBlock({ text, language }: CodeBlockProps) {
         />
         <div className="tip">{copy.text}</div>
       </div>
-      <ReactCodeBlock text={text} language={language} theme={dracula} />
+      <ReactCodeBlock text={text} language={language} theme={arta} />
     </div>
   );
 }

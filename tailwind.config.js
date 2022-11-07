@@ -4,6 +4,8 @@ module.exports = {
   content: [
       './src/components/**/**/*.{ts,tsx}',
       './src/components/**/*.{ts,tsx}',
+      './src/examples/**/*.{ts,tsx}',
+      './src/examples/*.{ts,tsx}',
       './src/views/**/**/*.{ts,tsx}',
       './src/views/**/*.{ts,tsx}',
       './src/*.{ts,tsx}'

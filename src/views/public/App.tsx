@@ -8,11 +8,12 @@ import CodeBlock from "components/_App/CodeBlock";
 import LanguageSelectorProvider from "services/context/languageSelector";
 import DeviceSizeSelectorProvider from "services/context/deviceSizeSelector";
 import { useScreenWidth } from "hooks";
+import { ComponentInformation } from "examples";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
-import { XCircleIcon } from "@heroicons/react/24/outline";
 import "./styles.css";
 
 export default function App() {
+  const { name, code, jsx } = ComponentInformation();
   const { deviceWidth } = useScreenWidth();
   return (
     <div
@@ -29,32 +30,19 @@ export default function App() {
           from the computer.
         </h2>
       </div>
-      <Sidebar title="Elements" width="w-64" sidebarType="components">
+      <Sidebar title={name} width="w-64" sidebarType="components">
       </Sidebar>
       <Main>
         <DeviceSizeSelectorProvider>
           <Navbar />
-          <Preview>
-            <div className="bg-red-100 rounded-lg p-4">
-              <div className="flex gap-3 items-start">
-                <XCircleIcon className="w-6 h-6 stroke-red-500" />
-                <h3 className="font-medium text-base">
-                  This is a warning message
-                </h3>
-              </div>
-              <p className="pl-9 text-sm font-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                mollitia neque suscipit asperiores perferendis dolorem.
-              </p>
-            </div>
-          </Preview>
+          <Preview template={code} />
         </DeviceSizeSelectorProvider>
       </Main>
       <Sidebar title="Source Code" width="w-96" sidebarType="code">
         <LanguageSelectorProvider>
           <LangSelect />
-          <CodeBlock text={`{/* Code JSX */}`} language="jsx" />
-          <CodeBlock text={`<!--- Code HTML --->`} language="html" />
+          <CodeBlock text={jsx} language="jsx" />
+          <CodeBlock text={code} language="html" />
           <CodeBlock text={`/* Code CSS */`} language="css" />
         </LanguageSelectorProvider>
       </Sidebar>
